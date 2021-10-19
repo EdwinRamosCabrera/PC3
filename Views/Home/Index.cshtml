@@ -1,8 +1,61 @@
-﻿@{
+﻿@model List<Solicitud>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Lista de Solicitudes de Compra</h1>
+    <br>
+    <table border="1">
+    <thead>
+        <tr>
+        <th>Nombre de Producto</th>
+        <th>Foto</th>
+        <th>Descripcion</th>
+        <th>Precio a Pagar</th>
+        <th>Lugar de Compra</th>
+        <th>Nombre del Comprador</th>
+        <th>Celular de Contacto</th>
+        <th>Categoria</th>
+        </tr>
+    </thead>
+    @if (Model.Count == 0){
+        <p>No hay solicitudes de compra aun.</p>
+        }
+    
+    @foreach (var solicitud in Model) {
+        @if(solicitud.Categoria == null){
+            <tbody>
+            <tr>
+            <td>@solicitud.NombrePro</td>
+            <td>@solicitud.Imagen</td>
+            <td>@solicitud.Descripcion</td>
+            <td>@solicitud.Precio</td>
+            <td>@solicitud.Lugar</td>
+            <td>@solicitud.NombreCom</td>
+            <td>@solicitud.Celular</td>
+            <td>---------</td>
+            </tr>
+            </tbody> 
+            }else{
+            <tbody>
+            <tr>
+            <td>@solicitud.NombrePro</td>
+            <td>@solicitud.Imagen</td>
+            <td>@solicitud.Descripcion</td>
+            <td>@solicitud.Precio</td>
+            <td>@solicitud.Lugar</td>
+            <td>@solicitud.NombreCom</td>
+            <td>@solicitud.Celular</td>
+            <td>@solicitud.Categoria.Nombre</td>
+            </tr>
+            </tbody>    
+
+            }
+    
+    }
+
+</table>
+
 </div>

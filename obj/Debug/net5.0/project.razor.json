@@ -15634,6 +15634,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "d:\\Github\\Programacion I\\Teoria\\PC03\\PC3\\Views\\Home\\Solicitud.cshtml",
+      "TargetPath": "Views\\Home\\Solicitud.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\Github\\Programacion I\\Teoria\\PC03\\PC3\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
@@ -15646,11 +15651,6 @@
     {
       "FilePath": "d:\\Github\\Programacion I\\Teoria\\PC03\\PC3\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Github\\Programacion I\\Teoria\\PC03\\PC3\\Views\\Home\\Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
       "FileKind": "mvc"
     }
   ],

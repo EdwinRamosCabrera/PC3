@@ -1,0 +1,43 @@
+@model Solicitud
+@{
+    ViewData["Title"] = " ";
+}
+<h1>@ViewData["Title"]</h1>
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<h1 style="text-align: center;">Formulario de Solicitud de Compra</h1>
+<form method="post">
+    <div class="form-group">
+        <label asp-for="NombrePro">Nombre del Producto</label>
+        <input asp-for="NombrePro" class="form-control">
+        <span asp-validation-for="NombrePro" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Imagen">Imagen del Producto (URL)</label>
+        <input asp-for="Imagen" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="Descripcion">Descripcion del Producto</label>
+        <textarea asp-for="Descripcion" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <label asp-for="Precio">Precio a Pagar S/.</label>
+        <input asp-for="Precio" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="Lugar">Lugar de Compra</label>
+        <input asp-for="Lugar" class="form-control">
+    </div>  
+    <div class="form-group">
+        <label asp-for="NombreCom">Nombre del Comprador</label>
+        <input asp-for="NombreCom" class="form-control">
+        <span asp-validation-for="NombreCom" class="text-danger"></span>
+   </div>
+       <div class="form-group">
+        <label asp-for="Celular">Cellar del Contacto</label>
+        <input asp-for="Celular" class="form-control">
+    </div>
+
+    <button class="btn btn-primary">Enviar</button>
+</form>

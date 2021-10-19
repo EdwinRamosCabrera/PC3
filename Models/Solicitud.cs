@@ -21,8 +21,8 @@ namespace PC3.Models
 
         [Required]
         public string NombreCom { get; set; }
-        
-        public string CategoriaPro {get; set;}
+
+        public string Celular { get; set; }
 
         public Double Precio {get; set;}
 

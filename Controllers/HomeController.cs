@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using PC3.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace PC3.Controllers
 {
@@ -13,9 +14,12 @@ namespace PC3.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+         private readonly RegistroContext _context;
+
+        public HomeController(ILogger<HomeController> logger, RegistroContext context)
         {
             _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
@@ -23,10 +27,28 @@ namespace PC3.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Solicitud()
         {
             return View();
         }
+
+        [HttpPost]
+        public IActionResult Solicitud(Solicitud sa)
+        {
+             if (ModelState.IsValid){
+
+                 //Guardar el oneto sa en la BD
+               var Categoria = _context.Categorias.First( u => u.Id == 1);
+               sa.Categoria = Categoria;
+                _context.Add(sa);
+                _context.SaveChanges();
+                 
+                return RedirectToAction("Index");
+             } 
+
+            return View(sa);
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
