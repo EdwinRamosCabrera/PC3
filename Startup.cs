@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using PC3.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace PC3
 {
@@ -24,6 +26,12 @@ namespace PC3
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            var connectionString = "server=localhost;user=root;password=Edwin20052056;database=registro";
+            var serverVersion = ServerVersion.AutoDetect(connectionString);
+            
+            services.AddDbContext<RegistroContext>(options => options.UseMySql(connectionString, serverVersion));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

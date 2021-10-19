@@ -30,7 +30,7 @@ namespace PC3.Models
 
        public DateTime Fecha {get; set;}
 
-        public int? CategoriaId {get; set;}
+        public int CategoriaId {get; set;}
 
              public Solicitud()
         {

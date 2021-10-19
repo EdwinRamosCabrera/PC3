@@ -24,7 +24,9 @@ namespace PC3.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var solicitudes = _context.SolicitudesCompra.Include(s => s.Categoria).ToList();
+            
+            return View(solicitudes);
         }
 
         public IActionResult Solicitud()
