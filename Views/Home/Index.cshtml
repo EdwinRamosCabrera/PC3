@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "Home Page";
 }
-
+<body style="background-color: #F5CBA7;">
 <div class="text-center">
     <h1>Lista de Solicitudes de Compra</h1>
     <br>
@@ -21,7 +21,7 @@
         </tr>
     </thead>
     @if (Model.Count == 0){
-        <p>No hay solicitudes de compra aun.</p>
+        <p>No hay solicitudes de compra aun, Te invitamos a poder realizar tu primera intencion de compra dando click en REGISTRO</p>
         }
     
     @foreach (var solicitud in Model) {
@@ -59,3 +59,4 @@
 </table>
 
 </div>
+</body>
